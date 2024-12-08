@@ -1,0 +1,21 @@
+structure folder
+controller & routes
+
+kita gabakal nginput index.js kalo kalian dah main controller dan routes, kita hanya main di controller dan routes sehingga di index.js tu sepi ga rame
+
+restfull api tapi lebih ke structure folder main rapi rapian 
+
+
+1:26
+
+Tugas bikin Update sama Delete sesuai dengan structure folder controller sama routes, handle error nya kan masih pake index.js, siapa tau error handlingnya pakai middleware folder lagi middleware
+kan dah ada user
+Tambah Product  get product, update product nilai +
+
+
+Konsep di express js tu banyak, ada controller, routes, model, middleware, config, utils, dll.
+tapi yang akan kita coba pake itu controllers, routes, models, sama middleware kalo ngga middlewarenya kita taro di index.js aja 
+
+Kuulangi satu lagii tugasnya 
+Bikin CRUD harus bisa ngepost di database lokal (post.json) harus berfolder structure (semua ga boleh di index.js) yang ada di index.js importan routes, handle error, sama listen udah itu aja sebagai absensi
+Sebagai poin kalian boleh bikin satu lagi selain users.js seperti product dll, dan handdle error itu dibuat structure folder / middleware 
