@@ -59,3 +59,35 @@ exports.updateUser = (req, res, next) => {
     res.status(500).json({ message: "Failed to update user data", error });
   }
 };
+
+// delete user by id
+exports.deleteUser = (req, res, next) => {
+  const { id } = req.params;
+
+  // Cari user berdasarkan id
+  const user = post.find((i) => i.id === +id);
+
+  // Periksa jika user tidak ditemukan
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  // Cari index user di array berdasarkan referensi user yang ditemukan
+  const userIndex = post.indexOf(user);
+
+  // Hapus user dari array
+  const deletedUser = post.splice(userIndex, 1)[0];
+
+  // Simpan perubahan ke file JSON
+  try {
+    fs.writeFileSync("./post.json", JSON.stringify(post, null, 2));
+    res.status(200).json({
+      status: "success",
+      code: 200,
+      deletedUser,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to delete user data", error });
+  }
+};
+
